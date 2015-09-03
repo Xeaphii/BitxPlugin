@@ -701,8 +701,8 @@ public class ConnectPlugin extends CordovaPlugin {
                                 } else {
                                     GraphObject graphObject = response.getGraphObject();
                                     Log.d(TAG, "returning login object " + graphObject.getInnerJSONObject().toString());
-                                    userID = user.getId();
-                                    loginContext.success(getResponse());
+                                    userID = user.getName();
+                                    loginContext.success(graphObject.getInnerJSONObject());
                                     loginContext = null;
                                 }
                             } else {

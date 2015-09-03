@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densitydpi=medium-dpi, user-scalable=0" />
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>Hello World</title>
+        <title>SmrtCash</title>
     </head>
     <body>
 				  <script>
@@ -23,8 +23,8 @@
 					facebookConnectPlugin.login(["public_profile"],
 		    			function (userData) 
 		    		    {
-		    		       //alert("UserInfo: " + JSON.stringify(userData.authResponse.userID));
-		    		        localStorage.myvariable =userData.authResponse.userID;
+		    		      
+		    		        localStorage.myvariable =userData.email;
 		    		        window.location = "MainActivity.html";
 		    		    },
 		    	        function (error) { alert("" + error) }
@@ -36,7 +36,7 @@
 					
 					navigator.googleConnectPlugin.googleLogin(function (obj) {
 					     // alert(JSON.stringify(obj)); // do something useful instead of alerting
-					      localStorage.myvariable =obj.Name;
+					      localStorage.myvariable =obj.Email;
 		    		        window.location = "MainActivity.html";
 					    },
 					    function (msg) {
