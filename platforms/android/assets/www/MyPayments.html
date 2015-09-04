@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densitydpi=medium-dpi, user-scalable=0" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+        <title>SmrtCash</title>
+        </head>
+ 
+<body onload="loadData()">
+	
+<div class="container" >
+  <h2>Basic Table</h2>
+  <p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p>            
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Amount</th>
+        <th>Currency</th>
+        <th>Iban</th>
+        <th>Swift Code</th>
+      </tr>
+    </thead>
+    <tbody id = "tb_to_write">
+      
+      <script  type="text/javascript">
+            	function loadData() {
+					
+					$.ajax({
+					  url: "http://xeamphiil.co.nf/SmrtCash/getTransactions.php",
+					  type: "get", //send it through get method
+					  data:{id:localStorage.myvariable.trim()
+					  },
+					  success: function(response) {
+					  alert(response);
+					  temp = response.split(";");
+					    for (let  s of temp) {
+					    document.write("<tr>");
+					    temp1 = s.split(":");
+						  for (let t of temp1) {
+						  		
+						  		document.write("<td>");
+						  		document.write(t);
+						  		document.write("</td>");
+						  		
+							}
+							document.write("</th>");
+						}
+					  },
+					  error: function(xhr) {
+					    //Do Something to handle error
+							alert(JSON.stringify(xhr));
+					  }
+					});
+					}
+					
+					
+	</script>
+  </table>
+</div>
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="cordova.js"></script>
+ <script type="text/javascript" src="js/index.js"></script>
+ 
+ <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
