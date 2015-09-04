@@ -12,12 +12,14 @@
     <body>
     <script  type="text/javascript">
             	function msg()
-					{
+				{
 					localStorage.myvariable ="";
 					 window.location = "index.html";
 
 				}
-				
+				function MakePayment(){
+					window.location = "MakeTransaction.html";
+				}			
             	</script>
     
         
@@ -33,7 +35,7 @@
 			    <button style="display: block; width: 95%;color:#ffffff;margin: 15px 2.5% 0px 2.5%;">smrtCash</button>
 			  
 			    <button style="display: block; width: 95%;color:#ffffff;margin: 15px 2.5% 0px 2.5%;">Card</button>
-			
+			<button onclick="MakePayment()" style="display: block; width: 95%;color:#ffffff;margin: 15px 2.5% 0px 2.5%;">Make Transaction</button>
   
        
         <script type="text/javascript" src="cordova.js"></script>
