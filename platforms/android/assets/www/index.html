@@ -10,22 +10,54 @@
         <title>SmrtCash</title>
     </head>
     <body>
-				  <script>
-				  alert(data);
-				</script>
+				 
     
             	<script  type="text/javascript">
+            	function GetUserVerif(user_id)
+					{
+					$.ajax({
+					  url: "http://xeamphiil.co.nf/SmrtCash/VerifyUser.php",
+					  type: "get", //send it through get method
+					  data:{email:user_id},
+					  success: function(response) {
+					    //Do Something
+					    temp = response.split(":");
+					    if(temp[0] == 0){
+					    	localStorage.myvariable =temp[1];
+					    	localStorage.fetch_credentials = "0";
+		    		        window.location = "GetDetails.html";
+					    }else{
+					  		  localStorage.myvariable =temp[1];
+					  		  localStorage.fetch_credentials = "1";
+		    		        window.location = "MainActivity.html";
+					    }
+						alert(response);
+					  },
+					  error: function(xhr) {
+					    //Do Something to handle error
+						alert(JSON.stringify(xhr));
+					  }
+					});
+					}
+            	if(localStorage.myvariable.length>0){
+            			if(localStorage.fetch_credentials == '0'){
+					    	
+		    		        window.location = "GetDetails.html";
+					    }else{
+					  		 
+		    		        window.location = "MainActivity.html";
+					    }
+            	}else{
+            		localStorage.myvariable ="";
+            	}
             	function msg()
 					{
-					
-					
-					
 					facebookConnectPlugin.login(["public_profile"],
 		    			function (userData) 
 		    		    {
-		    		      
-		    		        localStorage.myvariable =userData.email;
-		    		        window.location = "MainActivity.html";
+		    		      GetUserVerif(userData.email);
+		    		     //   localStorage.myvariable =userData.email;
+		    		     //   window.location = "MainActivity.html";
 		    		    },
 		    	        function (error) { alert("" + error) }
 		    	    );
@@ -61,6 +93,7 @@
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript" src="js/GooglePlus.js"></script>
+        <script src="js/jquery.min.js"></script>
         <script type="text/javascript">
             app.initialize();
         </script>
