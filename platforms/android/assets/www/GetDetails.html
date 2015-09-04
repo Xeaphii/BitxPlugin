@@ -26,11 +26,13 @@
 					  },
 					  success: function(response) {
 					    //Do Something
-						alert(response);
+						//alert(response);
+						localStorage.fetch_credentials = "1";
+						window.location = "MainActivity.html";
 					  },
 					  error: function(xhr) {
 					    //Do Something to handle error
-						alert(JSON.stringify(xhr));
+						//alert(JSON.stringify(xhr));
 					  }
 					});
 					
