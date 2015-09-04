@@ -14,20 +14,16 @@
 	<script  type="text/javascript">
             	function GetUserVerif()
 					{
-					console.log("http://xeamphiil.co.nf/SmrtCash/UserDetailsInput.php?"+'id='+localStorage.myvariable.trim()
-					  +'&address='+document.getElementById("address").value
-					  +'&name='+document.getElementById("name").value
-					  +'&phone_number='+document.getElementById("p_number").value
-					  +'&id_number='+document.getElementById("id_number").value);
+					
 					$.ajax({
-					  url: "http://xeamphiil.co.nf/SmrtCash/UserDetailsInput.php?"+'id='+localStorage.myvariable
-					  +'&address='+document.getElementById("address").value
-					  +'&name='+document.getElementById("name").value
-					  +'&phone_number='+document.getElementById("p_number").value
-					  +'&id_number='+document.getElementById("id_number").value
-					  ,
+					  url: "http://xeamphiil.co.nf/SmrtCash/UserDetailsInput.php",
 					  type: "get", //send it through get method
-					  
+					  data:{id:localStorage.myvariable.trim()
+					  ,address:document.getElementById("address").value.trim()
+					  ,name:document.getElementById("name").value.trim()
+					  ,phone_number:document.getElementById("p_number").value.trim()
+					  ,id_number:document.getElementById("id_number").value.trim()
+					  },
 					  success: function(response) {
 					    //Do Something
 						alert(response);
@@ -69,18 +65,19 @@
     </div>
     
     
-    <div class="form-group">        
+    
+  </form>
+  <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-default">Submit</button>
+        <button  class="btn btn-default" onclick="GetUserVerif()">Submit</button>
       </div>
     </div>
-  </form>
 </div>
 <script src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
   <script type="text/javascript" src="cordova.js"></script>
  <script type="text/javascript" src="js/index.js"></script>
  
- 
+ <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
