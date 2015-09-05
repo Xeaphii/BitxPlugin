@@ -21,10 +21,11 @@
 			<thead>
 				<tr>
 					<th>Id</th>
-					<th>Amount</th>
-					<th>Currency</th>
-					<th>Iban</th>
-					<th>Swift Code</th>
+			        <th>Amount</th>
+			        <th>Currency</th>
+			        <th>Status</th>
+			        <th>Iban</th>
+			        <th>Swift Code</th>
 				</tr>
 			</thead>
 			<tbody id="tb_to_write">
@@ -38,7 +39,7 @@
 					  data:{id:localStorage.myvariable.trim()
 					  },
 					  success: function(response) {
-					  alert(response);
+					 // alert(response);
 					  temp = response.split(";");
             	      var output = "";
               	    for (var i = 0; i < temp.length; i++) {
