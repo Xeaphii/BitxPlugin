@@ -68,8 +68,8 @@
 					
 					navigator.googleConnectPlugin.googleLogin(function (obj) {
 					     // alert(JSON.stringify(obj)); // do something useful instead of alerting
-					      localStorage.myvariable =obj.Email;
-		    		        window.location = "MainActivity.html";
+					    //  localStorage.myvariable =;
+		    		        GetUserVerif(obj.Email);
 					    },
 					    function (msg) {
 					      alert('error: ' + msg);
