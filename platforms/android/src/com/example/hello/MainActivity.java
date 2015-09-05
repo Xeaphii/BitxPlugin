@@ -41,21 +41,21 @@ public class MainActivity extends CordovaActivity
     {
        super.onCreate(savedInstanceState);
 
-	    BitXClient client = new BitXClient("cw83q7swfwabs", "3akFVcrZ974dBxr3-VaFKIbCGdJ6o2Hw4lDkv2qijA8");
+	    BitXClient client = new BitXClient("ggyecy8p8du9", "ybwjj1uCtwBnTnwQTfzG2KhTgzQMxZEW1Gx0bW0advY");
 	    client.balance(
 
                 new Callback<BalanceList>() {
                     @Override
                     public void success(BalanceList balanceList, Response response) {
                     	
-						Toast.makeText(getApplicationContext(), "Balance fetched", Toast.LENGTH_LONG).show();
-						
-                    	 loadUrl("javascript:localStorage.balance="
-                    	       		+  balanceList.balance.get(0).balance+""
-                    	       		+ ";");
-                    	 loadUrl("javascript:localStorage.asset='"
-                 	       		+  balanceList.balance.get(0).asset+""
-                 	       		+ "';");
+						Toast.makeText(getApplicationContext(), "Balance fetched balance is "+balanceList.balance.get(0).balance+" "+balanceList.balance.get(0).asset, Toast.LENGTH_LONG).show();
+//						
+//                    	 loadUrl("javascript:localStorage.balance="
+//                    	       		+  balanceList.balance.get(0).balance+""
+//                    	       		+ ";");
+//                    	 loadUrl("javascript:localStorage.asset='"
+//                 	       		+  balanceList.balance.get(0).asset+""
+//                 	       		+ "';");
                     }
 
                     @Override
