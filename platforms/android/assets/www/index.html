@@ -40,12 +40,13 @@
 					});
 					}
             	if(localStorage.myvariable.length>0){
+            	localStorage.myvariable = "";
             			if(localStorage.fetch_credentials == '0'){
 					    	
-		    		        window.location = "GetDetails.html";
+		    		       // window.location = "GetDetails.html";
 					    }else{
-					  		 
-		    		        window.location = "MainActivity.html";
+					  		 localStorage.fetch_credentials = "0";
+		    		       // window.location = "MainActivity.html";
 					    }
             	}else{
             		localStorage.myvariable ="";
@@ -88,7 +89,7 @@
 			    <div class="g-bg" onclick="msgGoogle()"></div>
 			</div>
   
-<h1 style="margin: 90% 0 0 0;">SmrtCash is the simplest way to pay cash anyone anywhere anytime</h1>
+<h1 style="margin: 90% 0 0 0;">SmrtCash is the simplest way to pay</h1>
        
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
