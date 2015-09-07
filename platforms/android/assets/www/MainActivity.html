@@ -14,7 +14,8 @@
             	function msg()
 				{
 					localStorage.myvariable ="";
-					 window.location = "index.html";
+					navigator.app.exitApp();
+					 //window.location = "index.html";
 
 				}
 				function MakePayment(){
@@ -28,12 +29,15 @@
         
        <button style=" width: 35%;color:#ffffff;float: right;padding: 5px 5px 5px 5px;margin:-10% 0 0 0;" onclick="msg()">Logout</button>
 		<h1>Liquidity</h1>
-			<div class="container-tag">
+			<div class="container-tag" style="margin:50% 0 8% 0">
 				
 				
 				
 				
 			</div>
+			<p>Your balance is :<script>
+				document.write(localStorage.cust_balance);
+			</script></p>
 			<button onclick="MyTransaction()" style="display: block; width: 95%;color:#ffffff;margin: 5px 2.5% 0px 2.5%;">Transactions</button>
 			 
 			<button onclick="MakePayment()" style="display: block; width: 95%;color:#ffffff;margin: 15px 2.5% 0px 2.5%;">Pay</button>

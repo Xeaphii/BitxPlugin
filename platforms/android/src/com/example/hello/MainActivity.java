@@ -20,6 +20,7 @@
 package com.example.hello;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.webkit.WebView;
 import android.widget.Toast;
 import retrofit.Callback;
@@ -47,12 +48,12 @@ public class MainActivity extends CordovaActivity
                 new Callback<BalanceList>() {
                     @Override
                     public void success(BalanceList balanceList, Response response) {
-                    	
-						Toast.makeText(getApplicationContext(), "Balance fetched balance is "+balanceList.balance.get(0).balance+" "+balanceList.balance.get(0).asset, Toast.LENGTH_LONG).show();
-//						
-//                    	 loadUrl("javascript:localStorage.balance="
-//                    	       		+  balanceList.balance.get(0).balance+""
-//                    	       		+ ";");
+                    	Log.e("Balance", responseBodyInputStreamToString(response));
+						//Toast.makeText(getApplicationContext(), "Balance fetched balance is "+balanceList.balance.get(1).balance+" "+balanceList.balance.get(1).asset, Toast.LENGTH_LONG).show();
+						
+                    	 loadUrl("javascript:localStorage.cust_balance='"
+                    	       		+  balanceList.balance.get(1).balance+"( "+balanceList.balance.get(1).asset+" )"
+                    	       		+ "';");
 //                    	 loadUrl("javascript:localStorage.asset='"
 //                 	       		+  balanceList.balance.get(0).asset+""
 //                 	       		+ "';");
